@@ -1,7 +1,8 @@
 
 import React, { useMemo, useState } from "react";
 
-import { createRoot } from "react-dom/client";
+import {
+ createRoot } from "react-dom/client";
 
 import { motion } from "framer-motion";
 
@@ -68,7 +69,12 @@ import {
   Cpu,
 
   MessageSquareText,
-
+  ExternalLink,
+  Globe2,
+  Atom,
+  HeartPulse,
+  CalendarDays,
+  Landmark,
 } from "lucide-react";
 
 import {
@@ -962,11 +968,10 @@ function RAGEvidenceExplorer() {
                 <button
                   key={item.source}
                   onClick={() => toggleEvidence(index)}
-                  className={`w-full rounded-2xl border p-4 text-left transition ${
-                    active
+                  className={`w-full rounded-2xl border p-4 text-left transition ${active
                       ? "border-cyan-300/50 bg-cyan-400/10"
                       : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
-                  }`}
+                    }`}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="font-bold text-white">{item.source}</div>
@@ -1085,8 +1090,8 @@ function DocumentWorkspace() {
     active.risk === "High"
       ? "bg-rose-400/10 text-rose-200 border-rose-300/30"
       : active.risk === "Medium"
-      ? "bg-amber-400/10 text-amber-200 border-amber-300/30"
-      : "bg-emerald-400/10 text-emerald-200 border-emerald-300/30";
+        ? "bg-amber-400/10 text-amber-200 border-amber-300/30"
+        : "bg-emerald-400/10 text-emerald-200 border-emerald-300/30";
 
   return (
     <section className="mx-auto max-w-7xl px-5 py-12">
@@ -1117,21 +1122,19 @@ function DocumentWorkspace() {
                   setSelectedDoc(index);
                   setMemoGenerated(false);
                 }}
-                className={`w-full rounded-2xl border p-4 text-left transition ${
-                  selectedDoc === index
+                className={`w-full rounded-2xl border p-4 text-left transition ${selectedDoc === index
                     ? "border-emerald-300/60 bg-emerald-400/10"
                     : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
-                }`}
+                  }`}
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="font-bold text-white">{doc.title}</div>
-                  <span className={`rounded-full border px-3 py-1 text-xs font-bold ${
-                    doc.risk === "High"
+                  <span className={`rounded-full border px-3 py-1 text-xs font-bold ${doc.risk === "High"
                       ? "border-rose-300/30 bg-rose-400/10 text-rose-200"
                       : doc.risk === "Medium"
-                      ? "border-amber-300/30 bg-amber-400/10 text-amber-200"
-                      : "border-emerald-300/30 bg-emerald-400/10 text-emerald-200"
-                  }`}>
+                        ? "border-amber-300/30 bg-amber-400/10 text-amber-200"
+                        : "border-emerald-300/30 bg-emerald-400/10 text-emerald-200"
+                    }`}>
                     {doc.risk}
                   </span>
                 </div>
@@ -1275,8 +1278,8 @@ function EvaluationRiskLab() {
     active.release === "Approved"
       ? "bg-emerald-400/10 text-emerald-200"
       : active.release === "Conditional"
-      ? "bg-amber-400/10 text-amber-200"
-      : "bg-rose-400/10 text-rose-200";
+        ? "bg-amber-400/10 text-amber-200"
+        : "bg-rose-400/10 text-rose-200";
 
   const riskChecklist = [
     {
@@ -1332,21 +1335,19 @@ function EvaluationRiskLab() {
               <button
                 key={name}
                 onClick={() => setSelectedModel(name)}
-                className={`w-full rounded-2xl border p-4 text-left transition ${
-                  selectedModel === name
+                className={`w-full rounded-2xl border p-4 text-left transition ${selectedModel === name
                     ? "border-rose-300/60 bg-rose-400/10"
                     : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-bold text-white">{name}</span>
-                  <span className={`rounded-full px-3 py-1 text-xs font-bold ${
-                    modelScores[name].release === "Approved"
+                  <span className={`rounded-full px-3 py-1 text-xs font-bold ${modelScores[name].release === "Approved"
                       ? "bg-emerald-400/10 text-emerald-200"
                       : modelScores[name].release === "Conditional"
-                      ? "bg-amber-400/10 text-amber-200"
-                      : "bg-rose-400/10 text-rose-200"
-                  }`}>
+                        ? "bg-amber-400/10 text-amber-200"
+                        : "bg-rose-400/10 text-rose-200"
+                    }`}>
                     {modelScores[name].release}
                   </span>
                 </div>
@@ -1428,9 +1429,8 @@ function EvaluationRiskLab() {
                         )}
                         <span className="text-sm font-bold text-white">{item.label}</span>
                       </div>
-                      <span className={`rounded-full px-2 py-1 text-[10px] font-bold uppercase ${
-                        item.pass ? "bg-emerald-400/10 text-emerald-200" : "bg-rose-400/10 text-rose-200"
-                      }`}>
+                      <span className={`rounded-full px-2 py-1 text-[10px] font-bold uppercase ${item.pass ? "bg-emerald-400/10 text-emerald-200" : "bg-rose-400/10 text-rose-200"
+                        }`}>
                         {item.pass ? "pass" : "fail"}
                       </span>
                     </div>
@@ -1568,11 +1568,10 @@ function TechnicalBlueprint() {
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`rounded-2xl px-5 py-3 text-sm font-bold transition ${
-                activeTab === key
+              className={`rounded-2xl px-5 py-3 text-sm font-bold transition ${activeTab === key
                   ? "bg-cyan-300 text-slate-950"
                   : "border border-slate-700 bg-slate-950/70 text-slate-300 hover:border-cyan-300/60"
-              }`}
+                }`}
             >
               {label}
             </button>
@@ -1732,11 +1731,10 @@ function UseCaseLibrary() {
                 <button
                   key={item.title}
                   onClick={() => setSelected(index)}
-                  className={`w-full rounded-2xl border p-4 text-left transition ${
-                    isActive
+                  className={`w-full rounded-2xl border p-4 text-left transition ${isActive
                       ? "border-amber-300/60 bg-amber-400/10"
                       : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`rounded-xl p-2 ${isActive ? "bg-amber-400/20 text-amber-200" : "bg-slate-800 text-slate-300"}`}>
@@ -1927,11 +1925,10 @@ function EndToEndWorkflowSimulator() {
                     opacity: done || index === completedSteps.length ? 1 : 0.55,
                     scale: done ? 1.01 : 1,
                   }}
-                  className={`rounded-2xl border p-4 transition-all ${
-                    done
+                  className={`rounded-2xl border p-4 transition-all ${done
                       ? "border-emerald-300/50 bg-emerald-400/10"
                       : "border-slate-700 bg-slate-950/50"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-start gap-4">
                     <div className={`rounded-2xl p-3 ${done ? "bg-emerald-400/20 text-emerald-200" : "bg-slate-800 text-slate-300"}`}>
@@ -2102,7 +2099,7 @@ function EnterpriseConsole() {
             {cvText}
           </p>
           <div className="mt-4 rounded-2xl bg-emerald-400/10 p-4 text-sm leading-6 text-emerald-100">
-            Use this exact statement in your CV, cover letter, LinkedIn featured project, GitHub README, and interview discussion.
+            See GitHub README
           </div>
         </div>
       </div>
@@ -2294,6 +2291,184 @@ function ExecutiveCharts() {
 
 }
 
+
+const aAideaLinks = [
+  {
+    title: "aAidea Website",
+    category: "Main company website",
+    description:
+      "AI, scientific software, biomedical intelligence, document automation, and digital innovation services.",
+    href: "https://a-aidea.com",
+    icon: Globe2,
+    accent: "from-sky-400 to-cyan-300",
+  },
+  {
+    title: "GenAI Document Intelligence Studio",
+    category: "Enterprise GenAI and document intelligence",
+    description:
+      "Document intelligence, RAG workflows, custom agents, LLMOps monitoring, output QC, and adoption analytics.",
+    href: "https://aidea-genai-document-intelligence-s.vercel.app/",
+    icon: FileText,
+    accent: "from-violet-400 to-fuchsia-300",
+  },
+  {
+    title: "ALT Vulnerability Map",
+    category: "Cancer biology and DNA repair",
+    description:
+      "AI-assisted exploration of ALT-positive cancer vulnerabilities, therapeutic targets, and synthetic-lethality logic.",
+    href: "https://alt-vulnmap.vercel.app/",
+    icon: Atom,
+    accent: "from-rose-400 to-orange-300",
+  },
+  {
+    title: "Dynamic Protein Systems Explorer",
+    category: "Protein systems and structural biology",
+    description:
+      "Interactive exploration of protein motion, structural states, cryo-EM interpretation, and AI-guided biology.",
+    href: "https://dynamic-protein-systems-explorer.vercel.app/",
+    icon: Network,
+    accent: "from-emerald-400 to-teal-300",
+  },
+  {
+    title: "MitoGatekeeper Systems Studio",
+    category: "Mitochondrial bioenergetics",
+    description:
+      "Systems-level modelling of mitochondrial ATP regulation, NADH logic, redox pressure, and bioenergetic control.",
+    href: "https://mitogatekeeper-systems-studio.vercel.app/",
+    icon: HeartPulse,
+    accent: "from-lime-400 to-emerald-300",
+  },
+  {
+    title: "Neural-Net Forecasting Studio",
+    category: "Forecasting and business analytics",
+    description:
+      "Neural network forecasting, predictive analytics, baseline comparison, and decision-support dashboards.",
+    href: "https://neural-net-forecasting-studio.vercel.app/",
+    icon: LineChart,
+    accent: "from-blue-400 to-indigo-300",
+  },
+  {
+    title: "Plato’s Cave Philosophy Studio",
+    category: "Interactive education and philosophy",
+    description:
+      "A visual learning platform connecting perception, truth, knowledge, philosophy, and modern digital interpretation.",
+    href: "https://platos-cave-philosophy-studio.vercel.app/",
+    icon: Landmark,
+    accent: "from-amber-400 to-yellow-300",
+  },
+  {
+    title: "Wedding Planner App",
+    category: "Planning and productivity",
+    description:
+      "Budgeting, guest management, schedule planning, event workflow, and timeline coordination.",
+    href: "https://wedding-planner-app-bice.vercel.app/",
+    icon: CalendarDays,
+    accent: "from-pink-400 to-rose-300",
+  },
+];
+
+function AAideaEcosystem() {
+  return (
+    <section id="ecosystem" className="mx-auto max-w-7xl px-5 py-12">
+      <div className="mb-7">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-fuchsia-300">
+          aAidea ecosystem
+        </p>
+        <h2 className="mt-2 text-3xl font-bold text-white">
+          Connected AI products for enterprise, science, and decision support
+        </h2>
+        <p className="mt-3 max-w-3xl text-slate-300">
+          This GenAI studio is part of the wider aAidea portfolio, connecting enterprise AI,
+          biomedical intelligence, scientific software, forecasting, document automation,
+          and interactive decision-support products.
+        </p>
+      </div>
+
+      <div className="glass rounded-3xl p-6">
+        <div className="mb-6 rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-400/10 to-violet-400/10 p-6">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-start gap-4">
+              <div className="rounded-2xl bg-cyan-300/10 p-4 text-cyan-200">
+                <Globe2 size={32} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-black text-white">
+                  Explore the wider aAidea platform
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+                  Recruiters, collaborators, and clients can move directly from this
+                  enterprise GenAI demonstration to related aAidea products in biomedical AI,
+                  protein systems, mitochondrial biology, forecasting, and decision support.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://a-aidea.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-5 py-3 font-black text-slate-950 shadow-lg shadow-cyan-950/30 transition hover:scale-[1.02]"
+            >
+              Visit aAidea website
+              <ExternalLink size={18} />
+            </a>
+          </div>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {aAideaLinks.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <motion.a
+                key={item.title}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.04 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, scale: 1.015 }}
+                className="group relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-950/70 p-5 shadow-xl shadow-slate-950/30 transition hover:border-cyan-300/50"
+              >
+                <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${item.accent}`} />
+
+                <div className="flex items-start justify-between gap-4">
+                  <div className={`rounded-2xl bg-gradient-to-br ${item.accent} p-3 text-slate-950 shadow-lg`}>
+                    <Icon size={24} />
+                  </div>
+                  <div className="rounded-full border border-slate-700 bg-slate-900 p-2 text-slate-300 transition group-hover:border-cyan-300 group-hover:text-cyan-200">
+                    <ExternalLink size={15} />
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">
+                    {item.category}
+                  </p>
+                  <h3 className="mt-2 text-lg font-black leading-tight text-white group-hover:text-cyan-100">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="mt-5 inline-flex items-center gap-2 text-sm font-black text-cyan-200">
+                  Open app
+                  <ExternalLink size={15} />
+                </div>
+              </motion.a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 function App() {
 
   const [documentText, setDocumentText] = useState(
@@ -2415,6 +2590,8 @@ function App() {
                 Open document studio
 
               </a>
+
+              <a href="#ecosystem" className="rounded-2xl border border-cyan-400/40 bg-cyan-400/10 px-5 py-3 font-bold text-cyan-100 transition hover:border-cyan-300">View aAidea ecosystem</a>
 
               <a href="#architecture" className="rounded-2xl border border-slate-600 bg-slate-900 px-5 py-3 font-bold text-white">
 
@@ -2870,20 +3047,36 @@ function App() {
 
         </section>
 
+        <AAideaEcosystem />
+
         <footer className="mx-auto max-w-7xl px-5 py-10">
+          <div className="glass rounded-3xl p-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+              <div>
+                <div className="text-xl font-black text-white">aAidea GenAI Document Intelligence Studio</div>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-400">
+                  Portfolio demonstration for enterprise GenAI document intelligence, NLP, RAG,
+                  custom agents, LLMOps, automated reporting, human-in-the-loop validation,
+                  adoption analytics, A/B testing, impact measurement, and responsible AI governance.
+                </p>
+              </div>
 
-          <div className="glass rounded-3xl p-6 text-center">
-
-            <div className="text-xl font-black text-white">aAidea GenAI Document Intelligence Studio</div>
-
-            <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-slate-400">
-
-              Portfolio demonstration for enterprise GenAI document intelligence, NLP, RAG, custom agents, LLMOps, automated reporting, human-in-the-loop validation, adoption analytics, A/B testing, impact measurement, and responsible AI governance.
-
-            </p>
-
+              <div className="flex flex-wrap gap-2 lg:justify-end">
+                {aAideaLinks.slice(0, 6).map((item) => (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/70 px-3 py-2 text-xs font-semibold text-slate-300 transition hover:border-cyan-300 hover:text-cyan-100"
+                  >
+                    {item.title}
+                    <ExternalLink size={12} />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-
         </footer>
 
       </main>
