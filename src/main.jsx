@@ -2,7 +2,8 @@
 import React, { useMemo, useState } from "react";
 
 import {
- createRoot } from "react-dom/client";
+  createRoot
+} from "react-dom/client";
 
 import { motion } from "framer-motion";
 
@@ -969,8 +970,8 @@ function RAGEvidenceExplorer() {
                   key={item.source}
                   onClick={() => toggleEvidence(index)}
                   className={`w-full rounded-2xl border p-4 text-left transition ${active
-                      ? "border-cyan-300/50 bg-cyan-400/10"
-                      : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
+                    ? "border-cyan-300/50 bg-cyan-400/10"
+                    : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
                     }`}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-3">
@@ -1123,17 +1124,17 @@ function DocumentWorkspace() {
                   setMemoGenerated(false);
                 }}
                 className={`w-full rounded-2xl border p-4 text-left transition ${selectedDoc === index
-                    ? "border-emerald-300/60 bg-emerald-400/10"
-                    : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
+                  ? "border-emerald-300/60 bg-emerald-400/10"
+                  : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
                   }`}
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="font-bold text-white">{doc.title}</div>
                   <span className={`rounded-full border px-3 py-1 text-xs font-bold ${doc.risk === "High"
-                      ? "border-rose-300/30 bg-rose-400/10 text-rose-200"
-                      : doc.risk === "Medium"
-                        ? "border-amber-300/30 bg-amber-400/10 text-amber-200"
-                        : "border-emerald-300/30 bg-emerald-400/10 text-emerald-200"
+                    ? "border-rose-300/30 bg-rose-400/10 text-rose-200"
+                    : doc.risk === "Medium"
+                      ? "border-amber-300/30 bg-amber-400/10 text-amber-200"
+                      : "border-emerald-300/30 bg-emerald-400/10 text-emerald-200"
                     }`}>
                     {doc.risk}
                   </span>
@@ -1336,17 +1337,17 @@ function EvaluationRiskLab() {
                 key={name}
                 onClick={() => setSelectedModel(name)}
                 className={`w-full rounded-2xl border p-4 text-left transition ${selectedModel === name
-                    ? "border-rose-300/60 bg-rose-400/10"
-                    : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
+                  ? "border-rose-300/60 bg-rose-400/10"
+                  : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
                   }`}
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-bold text-white">{name}</span>
                   <span className={`rounded-full px-3 py-1 text-xs font-bold ${modelScores[name].release === "Approved"
-                      ? "bg-emerald-400/10 text-emerald-200"
-                      : modelScores[name].release === "Conditional"
-                        ? "bg-amber-400/10 text-amber-200"
-                        : "bg-rose-400/10 text-rose-200"
+                    ? "bg-emerald-400/10 text-emerald-200"
+                    : modelScores[name].release === "Conditional"
+                      ? "bg-amber-400/10 text-amber-200"
+                      : "bg-rose-400/10 text-rose-200"
                     }`}>
                     {modelScores[name].release}
                   </span>
@@ -1569,8 +1570,8 @@ function TechnicalBlueprint() {
               key={key}
               onClick={() => setActiveTab(key)}
               className={`rounded-2xl px-5 py-3 text-sm font-bold transition ${activeTab === key
-                  ? "bg-cyan-300 text-slate-950"
-                  : "border border-slate-700 bg-slate-950/70 text-slate-300 hover:border-cyan-300/60"
+                ? "bg-cyan-300 text-slate-950"
+                : "border border-slate-700 bg-slate-950/70 text-slate-300 hover:border-cyan-300/60"
                 }`}
             >
               {label}
@@ -1732,8 +1733,8 @@ function UseCaseLibrary() {
                   key={item.title}
                   onClick={() => setSelected(index)}
                   className={`w-full rounded-2xl border p-4 text-left transition ${isActive
-                      ? "border-amber-300/60 bg-amber-400/10"
-                      : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
+                    ? "border-amber-300/60 bg-amber-400/10"
+                    : "border-slate-700 bg-slate-950/50 hover:border-slate-500"
                     }`}
                 >
                   <div className="flex items-center gap-3">
@@ -1926,8 +1927,8 @@ function EndToEndWorkflowSimulator() {
                     scale: done ? 1.01 : 1,
                   }}
                   className={`rounded-2xl border p-4 transition-all ${done
-                      ? "border-emerald-300/50 bg-emerald-400/10"
-                      : "border-slate-700 bg-slate-950/50"
+                    ? "border-emerald-300/50 bg-emerald-400/10"
+                    : "border-slate-700 bg-slate-950/50"
                     }`}
                 >
                   <div className="flex items-start gap-4">
@@ -2579,7 +2580,7 @@ function App() {
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
 
-              This app is designed as a hiring demonstration for enterprise GenAI data science. It shows document intelligence, custom agents, RAG workflows, LLMOps, prompt engineering, NLP analytics, output QC, human validation, adoption analytics, A/B testing, impact measurement, executive reporting, and ethical governance.
+              This app is designed as a demonstration for enterprise GenAI data science. It shows document intelligence, custom agents, RAG workflows, LLMOps, prompt engineering, NLP analytics, output QC, human validation, adoption analytics, A/B testing, impact measurement, executive reporting, and ethical governance.
 
             </p>
 
